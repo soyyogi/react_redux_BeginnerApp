@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 function SongsList() {
     return (
@@ -8,4 +9,8 @@ function SongsList() {
     )
 }
 
-export default SongsList;
+function mapStateToProps(state) {
+    return { songs: state.songs };
+}
+
+export default connect(mapStateToProps)(SongsList);
